@@ -165,16 +165,10 @@ Response Body Error :
 
 ```json
 {
-  "error": [
-    {
-      "code": "404",
-      "message": "File tidak ditemukan"
-    },
-    {
+  "error": {
       "code": "500",
       "message": "Terjadi kesalahan saat mengambil file"
-    }
-  ]
+  }
 }
 ```
 
