@@ -1,16 +1,15 @@
-const { usersRef, firebase } = require('../db/firebase');
+const { usersRef, firebase, auth } = require('../db/firebase');
 // const axios = require('axios');
 const dotenv = require('dotenv');
 dotenv.config();
 
 const registerUser = async (req, res) => {
-  const { email, password, username } = req.body;
+  const { email, password } = req.body;
 
   try {
     const userRecord = await auth.createUser({
       email,
       password,
-      username,
       emailVerified: true,
     });
 
@@ -24,12 +23,12 @@ const registerUser = async (req, res) => {
     await usersRef.doc(userId).set(userData);
 
     res.json({
-      message: 'Registrasi berhasil. Pengguna baru ditambahkan.',
-      user: userRecord.toJSON(),
+      message: 'Pendaftaran akun berhasil',
+      data: userData,
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Registrasi gagal' });
+    res.status(500).json({ message: 'Pendaftaran akun gagal' });
   }
 };
 
@@ -41,10 +40,10 @@ const loginUser = async (req, res) => {
       .auth()
       .signInWithEmailAndPassword(email, password);
     const idToken = await userCredential.user.getIdToken();
-    res.json({ message: 'Login berhasil', token: idToken });
+    res.json({ message: 'Login berhasil', data: { token: idToken } });
   } catch (error) {
     console.log(error);
-    res.status(401).json({ error: 'Login gagal' });
+    res.status(401).json({ message: 'Login gagal, email atau password salah' });
   }
 };
 

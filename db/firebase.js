@@ -36,4 +36,4 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
-module.exports = { admin, firebase, db, usersRef, verifyToken };
+module.exports = { admin, firebase, db, usersRef, verifyToken, auth };
