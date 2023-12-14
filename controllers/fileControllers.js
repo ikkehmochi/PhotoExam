@@ -18,13 +18,15 @@ const addFiles = async (req, res) => {
       const storageFile = bucket.file(fileName);
       await storageFile.save(file.buffer);
       const publicUrl = `https://storage.googleapis.com/${bucket.name}/${fileName}`;
+      const date = new Date();
+      const dateTime = date.toISOString();
 
       const fileData = {
         fileId: fileId,
         fileName: file.originalname,
         fileType: file.mimetype,
         storageUrl: publicUrl,
-        createdAt: new Date(),
+        createdAt: dateTime,
       };
 
       await usersRef
