@@ -58,7 +58,9 @@ Response Body Success :
 {
   "message": "Berhasil Login",
   "data": {
-    "token": "user-token"
+    "token": "user-token",
+    "userId": "user id",
+    "email": "example@email.com"
   }
 }
 ```

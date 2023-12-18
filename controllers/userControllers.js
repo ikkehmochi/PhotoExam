@@ -36,15 +36,17 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
-  console.log(email);
-  console.log(password);
 
   try {
     const userCredential = await firebase
       .auth()
       .signInWithEmailAndPassword(email, password);
     const idToken = await userCredential.user.getIdToken();
-    res.json({ message: 'Login berhasil', data: { token: idToken } });
+    const userId = await userCredential.user.uid;
+    res.json({
+      message: 'Login berhasil',
+      data: { token: idToken, uid: userId, email: email },
+    });
   } catch (error) {
     console.log(error);
     res.status(401).json({ message: 'Login gagal, email atau password salah' });
