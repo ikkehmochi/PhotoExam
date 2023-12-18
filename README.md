@@ -88,7 +88,11 @@ Request Body :
 
 ```json
 {
-  "documents": req.files
+  "documents": req.files,
+  "description": "lorem ipsum",
+  "studentName": "lorem",
+  "studentAnswer": "lorem ipsum dolor sit amet",
+  "answerKey": "lorem ipsum dolor"
 }
 ```
 
@@ -101,16 +105,22 @@ Response Body Success :
     {
       "fileId": "file-id",
       "fileName": "file-name",
-      "fileType": "file-type",
       "storageUrl": "file-url",
-      "createdAt": "date"
+      "createdAt": "date",
+      "description": "lorem ipsum",
+      "studentName": "lorem",
+      "studentAnswer": "lorem ipsum dolor sit amet",
+      "answerKey": "lorem ipsum dolor"
     },
     {
       "fileId": "file-id",
       "fileName": "file-name",
-      "fileType": "file-type",
       "storageUrl": "file-url",
-      "createdAt": "date"
+      "createdAt": "date",
+      "description": "lorem ipsum",
+      "studentName": "lorem",
+      "studentAnswer": "lorem ipsum dolor sit amet",
+      "answerKey": "lorem ipsum dolor"
     }
   ]
 }
@@ -150,16 +160,22 @@ Response Body Success :
     {
       "fileId": "file-id",
       "fileName": "file-name",
-      "fileType": "file-type",
       "storageUrl": "file-url",
-      "createdAt": "date"
+      "createdAt": "date",
+      "description": "lorem ipsum",
+      "studentName": "lorem",
+      "studentAnswer": "lorem ipsum dolor sit amet",
+      "answerKey": "lorem ipsum dolor"
     },
     {
       "fileId": "file-id",
       "fileName": "file-name",
-      "fileType": "file-type",
       "storageUrl": "file-url",
-      "createdAt": "date"
+      "createdAt": "date",
+      "description": "lorem ipsum",
+      "studentName": "lorem",
+      "studentAnswer": "lorem ipsum dolor sit amet",
+      "answerKey": "lorem ipsum dolor"
     }
   ]
 }
@@ -192,9 +208,12 @@ Response Body Success :
   "data": {
     "fileId": "file-id",
     "fileName": "file-name",
-    "fileType": "file-type",
     "storageUrl": "file-url",
-    "createdAt": "date"
+    "createdAt": "date",
+    "description": "lorem ipsum",
+    "studentName": "lorem",
+    "studentAnswer": "lorem ipsum dolor sit amet",
+    "answerKey": "lorem ipsum dolor"
   }
 }
 ```

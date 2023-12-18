@@ -5,6 +5,8 @@ dotenv.config();
 
 const registerUser = async (req, res) => {
   const { email, password } = req.body;
+  const date = new Date();
+  const dateTime = date.toISOString();
 
   try {
     const userRecord = await auth.createUser({
@@ -17,7 +19,7 @@ const registerUser = async (req, res) => {
     const userData = {
       uid: userRecord.uid,
       email: userRecord.email,
-      createdAt: new Date(),
+      createdAt: dateTime,
     };
 
     await usersRef.doc(userId).set(userData);
