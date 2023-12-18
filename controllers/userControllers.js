@@ -26,7 +26,6 @@ const registerUser = async (req, res) => {
 
     res.json({
       message: 'Pendaftaran akun berhasil',
-      data: userData,
     });
   } catch (error) {
     console.error(error);

@@ -17,12 +17,7 @@ Response Body Success :
 
 ```json
 {
-  "message": "Pendaftaran Akun Berhasil",
-  "data": {
-    "uid": "example ID",
-    "email": "example@email.com",
-    "createdAt": "example-date"
-  }
+  "message": "Pendaftaran Akun Berhasil"
 }
 ```
 
