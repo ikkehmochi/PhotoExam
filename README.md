@@ -91,7 +91,6 @@ Request Body :
   "documents": req.files,
   "description": "lorem ipsum",
   "studentName": "lorem",
-  "studentAnswer": "lorem ipsum dolor sit amet",
   "answerKey": "lorem ipsum dolor"
 }
 ```
@@ -110,7 +109,8 @@ Response Body Success :
       "description": "lorem ipsum",
       "studentName": "lorem",
       "studentAnswer": "lorem ipsum dolor sit amet",
-      "answerKey": "lorem ipsum dolor"
+      "answerKey": "lorem ipsum dolor",
+      "score": 1
     },
     {
       "fileId": "file-id",
@@ -120,7 +120,8 @@ Response Body Success :
       "description": "lorem ipsum",
       "studentName": "lorem",
       "studentAnswer": "lorem ipsum dolor sit amet",
-      "answerKey": "lorem ipsum dolor"
+      "answerKey": "lorem ipsum dolor",
+      "score": 1
     }
   ]
 }
@@ -165,7 +166,8 @@ Response Body Success :
       "description": "lorem ipsum",
       "studentName": "lorem",
       "studentAnswer": "lorem ipsum dolor sit amet",
-      "answerKey": "lorem ipsum dolor"
+      "answerKey": "lorem ipsum dolor",
+      "score": 1
     },
     {
       "fileId": "file-id",
@@ -175,7 +177,8 @@ Response Body Success :
       "description": "lorem ipsum",
       "studentName": "lorem",
       "studentAnswer": "lorem ipsum dolor sit amet",
-      "answerKey": "lorem ipsum dolor"
+      "answerKey": "lorem ipsum dolor",
+      "score": 1
     }
   ]
 }
@@ -213,7 +216,8 @@ Response Body Success :
     "description": "lorem ipsum",
     "studentName": "lorem",
     "studentAnswer": "lorem ipsum dolor sit amet",
-    "answerKey": "lorem ipsum dolor"
+    "answerKey": "lorem ipsum dolor",
+    "score": 1
   }
 }
 ```

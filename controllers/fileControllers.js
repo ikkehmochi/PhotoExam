@@ -5,8 +5,11 @@ const { bucket } = require('../db/cloudStorage');
 const addFiles = async (req, res) => {
   try {
     const uploadedFile = req.files;
-    const { description, studentName, studentAnswer, keyAnswer } = req.body;
+    const { description, studentName, keyAnswer } = req.body;
     const documentId = req.user.uid;
+    const score = 1;
+    const studentAnswer = 'lorem ipsum dolor sit amet';
+
     if (!uploadedFile || uploadedFile.length === 0) {
       return res.status(404).json({ message: 'File tidak ditemukan' });
     }
@@ -31,6 +34,7 @@ const addFiles = async (req, res) => {
         studentName: studentName,
         studentAnswer: studentAnswer,
         keyAnswer: keyAnswer,
+        score: score,
       };
 
       await usersRef
