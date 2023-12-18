@@ -48,7 +48,6 @@ const addFiles = async (req, res) => {
 
     res.json({
       message: 'Berhasil upload',
-      data: uploadedData,
     });
   } catch (err) {
     console.log(err);

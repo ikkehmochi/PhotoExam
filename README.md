@@ -96,31 +96,7 @@ Response Body Success :
 
 ```json
 {
-  "message": "Berhasil upload",
-  "data": [
-    {
-      "fileId": "file-id",
-      "fileName": "file-name",
-      "storageUrl": "file-url",
-      "createdAt": "date",
-      "description": "lorem ipsum",
-      "studentName": "lorem",
-      "studentAnswer": "lorem ipsum dolor sit amet",
-      "answerKey": "lorem ipsum dolor",
-      "score": 1
-    },
-    {
-      "fileId": "file-id",
-      "fileName": "file-name",
-      "storageUrl": "file-url",
-      "createdAt": "date",
-      "description": "lorem ipsum",
-      "studentName": "lorem",
-      "studentAnswer": "lorem ipsum dolor sit amet",
-      "answerKey": "lorem ipsum dolor",
-      "score": 1
-    }
-  ]
+  "message": "Berhasil upload
 }
 ```
 
