@@ -96,7 +96,7 @@ Response Body Success :
 
 ```json
 {
-  "message": "Berhasil upload
+  "message": "Berhasil upload"
 }
 ```
 
@@ -139,7 +139,7 @@ Response Body Success :
       "description": "lorem ipsum",
       "studentName": "lorem",
       "studentAnswer": "lorem ipsum dolor sit amet",
-      "answerKey": "lorem ipsum dolor",
+      "keyAnswer": "lorem ipsum dolor",
       "score": 1
     },
     {
@@ -150,7 +150,7 @@ Response Body Success :
       "description": "lorem ipsum",
       "studentName": "lorem",
       "studentAnswer": "lorem ipsum dolor sit amet",
-      "answerKey": "lorem ipsum dolor",
+      "keyAnswer": "lorem ipsum dolor",
       "score": 1
     }
   ]
@@ -189,7 +189,7 @@ Response Body Success :
     "description": "lorem ipsum",
     "studentName": "lorem",
     "studentAnswer": "lorem ipsum dolor sit amet",
-    "answerKey": "lorem ipsum dolor",
+    "keyAnswer": "lorem ipsum dolor",
     "score": 1
   }
 }

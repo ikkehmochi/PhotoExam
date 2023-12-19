@@ -1,14 +1,13 @@
 const { usersRef } = require('../db/firebase');
 const { v4: uuidv4 } = require('uuid');
 const { bucket } = require('../db/cloudStorage');
+const axios = require('axios');
 
 const addFiles = async (req, res) => {
   try {
     const uploadedFile = req.files;
     const { description, studentName, keyAnswer } = req.body;
     const documentId = req.user.uid;
-    const score = 1;
-    const studentAnswer = 'lorem ipsum dolor sit amet';
 
     if (!uploadedFile || uploadedFile.length === 0) {
       return res.status(404).json({ message: 'File tidak ditemukan' });
@@ -25,25 +24,41 @@ const addFiles = async (req, res) => {
       const date = new Date();
       const dateTime = date.toISOString();
 
-      const fileData = {
-        fileId: fileId,
-        fileName: file.originalname,
-        storageUrl: publicUrl,
-        createdAt: dateTime,
-        description: description,
-        studentName: studentName,
-        studentAnswer: studentAnswer,
-        keyAnswer: keyAnswer,
-        score: score,
-      };
+      const apiBaseUrl = 'http://127.0.0.1:8000'; // Ganti dengan URL FastAPI Anda
+      const apiEndpoint = '/process_image/';
+      const imageUrl = publicUrl; // Ganti dengan URL gambar dari Google Cloud Storage
+      const apiRequestUrl = `${apiBaseUrl}${apiEndpoint}`;
 
-      await usersRef
-        .doc(documentId)
-        .collection('files')
-        .doc(fileId)
-        .set(fileData);
+      try {
+        const response = await axios.post(apiRequestUrl, {
+          image_url: imageUrl,
+          key_answer: keyAnswer,
+        });
+        const similarityResult = response.data.SimilarityResult;
+        const ocrText = response.data.OCRText;
 
-      uploadedData.push(fileData);
+        const fileData = {
+          fileId: fileId,
+          fileName: file.originalname,
+          storageUrl: publicUrl,
+          createdAt: dateTime,
+          description: description,
+          studentName: studentName,
+          keyAnswer: keyAnswer,
+          studentAnswer: ocrText,
+          score: similarityResult,
+        };
+
+        await usersRef
+          .doc(documentId)
+          .collection('files')
+          .doc(fileId)
+          .set(fileData);
+
+        uploadedData.push(fileData);
+      } catch (error) {
+        console.error('Error calling FastAPI:', error.message);
+      }
     }
 
     res.json({

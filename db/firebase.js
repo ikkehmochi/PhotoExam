@@ -6,7 +6,7 @@ dotenv.config();
 
 // firebaseConfig dirubah sesuai akun firebase
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: 'AIzaSyC1AbGirMP34HKXbWC2JT64j0I77Nzjd6o',
   authDomain: 'photo-exam.firebaseapp.com',
   projectId: 'photo-exam',
   storageBucket: 'photo-exam.appspot.com',
