@@ -14,10 +14,12 @@ with io.open(image_path, 'rb') as image_file:
     content = image_file.read()
 image = vision.Image(content=content)
 
-# converting image to text
+# converting image to text and ignoring symbols
 response = client.document_text_detection(image=image)
-full_txt = response.full_text_annotation.text
-print(full_txt)
+full_txt = response.full_text_annotation.text  
+encoded_text = full_txt.encode('ascii', 'ignore')
+decoded_text = encoded_text.decode()
+print(decoded_text)
 
 
 # # check for each word confidence level
