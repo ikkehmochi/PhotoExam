@@ -24,7 +24,7 @@ const addFiles = async (req, res) => {
       const date = new Date();
       const dateTime = date.toISOString();
 
-      const apiBaseUrl = 'http://127.0.0.1:8000'; // Ganti dengan URL FastAPI Anda
+      const apiBaseUrl = 'http://34.101.193.212:8000'; // Ganti dengan URL FastAPI Anda
       const apiEndpoint = '/process_image/';
       const imageUrl = publicUrl; // Ganti dengan URL gambar dari Google Cloud Storage
       const apiRequestUrl = `${apiBaseUrl}${apiEndpoint}`;
