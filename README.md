@@ -88,7 +88,7 @@ Request Body :
   "documents": req.files,
   "description": "lorem ipsum",
   "studentName": "lorem",
-  "answerKey": "lorem ipsum dolor"
+  "keyAnswer": "lorem ipsum dolor"
 }
 ```
 
